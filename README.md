@@ -1,2 +1,2 @@
 # BeeHR backend
-Sring boot backend for one of my master's degree projects
+Spring boot backend for BeeHR, one of my master's degree projects
