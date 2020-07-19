@@ -1,14 +1,19 @@
 package com.boushib.recruitment.models;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.lang.NonNull;
 
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 public class User {
   private UUID id;
+  @NotBlank
   private String name;
+  @NotBlank
   private String email;
+  @NotBlank
   private String password;
+  @NotBlank
   private String gender;
   private String account_type;
   private String created_at;

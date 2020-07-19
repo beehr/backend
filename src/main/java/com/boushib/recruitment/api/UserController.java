@@ -3,8 +3,10 @@ package com.boushib.recruitment.api;
 import com.boushib.recruitment.models.User;
 import com.boushib.recruitment.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -20,7 +22,7 @@ public class UserController {
   }
 
   @PostMapping
-  public int signup(@RequestBody User user){
+  public int signup(@Valid @NonNull @RequestBody User user){
     return userService.signup(user);
   }
 
@@ -35,7 +37,7 @@ public class UserController {
   }
 
   @PutMapping(path = "{id}")
-  public int updateUser(@PathVariable("id") UUID id, @RequestBody User user){
+  public int updateUser(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody User user){
     return userService.updateUser(id, user);
   }
 
