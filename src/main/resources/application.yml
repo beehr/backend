@@ -1,0 +1,11 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/beehr
+    username: postgres
+    password: 123456
+    pool-size: 32
+spring:
+  security:
+    user:
+      name: root
+      password: 123@456

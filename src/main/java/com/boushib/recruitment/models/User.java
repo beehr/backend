@@ -2,6 +2,7 @@ package com.boushib.recruitment.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotBlank;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 public class User {
@@ -15,8 +16,8 @@ public class User {
   @NotBlank
   private String gender;
   private String account_type;
-  private String created_at;
-  private String updated_at;
+  private Timestamp created_at;
+  private Timestamp updated_at;
 
   public User(
       @JsonProperty("id") UUID id,
@@ -32,6 +33,26 @@ public class User {
     this.password = password;
     this.gender = gender;
     this.account_type = account_type;
+  }
+
+  public User(
+      UUID id,
+      String name,
+      String email,
+      String password,
+      String gender,
+      String account_type,
+      Timestamp created_at,
+      Timestamp updated_at
+  ) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.gender = gender;
+    this.account_type = account_type;
+    this.created_at = created_at;
+    this.updated_at = updated_at;
   }
 
   public UUID getId() {
@@ -58,11 +79,11 @@ public class User {
     return account_type;
   }
 
-  public String getCreatedAt() {
+  public Timestamp getCreatedAt() {
     return created_at;
   }
 
-  public String getUpdatedAt() {
+  public Timestamp getUpdatedAt() {
     return updated_at;
   }
 }
